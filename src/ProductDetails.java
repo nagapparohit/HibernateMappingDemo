@@ -82,14 +82,19 @@ public class ProductDetails extends HttpServlet {
 				Map finances = p.getFinance();
 				
 				String financeAvail="";
-				if(finances.get("BANK")!=null) {
-					Finance f =(Finance) finances.get("BANK");
+				
+				for(Object key:finances.keySet()) {
+					Finance f = (Finance) finances.get(key);
 					financeAvail +=(f.getName()+",");
 				}
-				if(finances.get("CREDITCARD") != null) {
-					Finance f =(Finance) finances.get("CREDITCARD");
-					financeAvail +=(f.getName()+",");				
-				}
+				
+			/*
+			 * if(finances.get("BANK")!=null) { Finance f =(Finance) finances.get("BANK");
+			 * financeAvail +=(f.getName()+","); }
+			 */			/*
+			 * if(finances.get("CREDITCARD") != null) { Finance f =(Finance)
+			 * finances.get("CREDITCARD"); financeAvail +=(f.getName()+","); }
+			 */
 				
 				out.println(id+"|"+price+"|"+colorsAvail+"|"+screenAvail+"|"+osAvail+"|"+financeAvail);
 				out.println("<br><hr>");

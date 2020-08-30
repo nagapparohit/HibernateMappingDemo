@@ -20,7 +20,7 @@ public class EProduct {
 	
 	public EProduct() {
 		super();
-	
+		
 	}
 	public int getId() {
 		return id;
