@@ -28,7 +28,7 @@
     		<one-to-many class="com.ecommerce.OS"/>
     	</set>
     	
-    	<map name="finance">
+    	<map name="finance" cascade="all">
     		<key column="product_id"></key>
     		<index column="ftype" type="string"></index>
     		<one-to-many class="com.ecommerce.Finance"/>
